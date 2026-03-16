@@ -15,13 +15,15 @@ interface ResultDashboardProps {
   result: AnalysisResult;
 }
 
+const easing = [0.2, 0, 0, 1] as const;
+
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
       duration: 0.4,
-      ease: [0.2, 0, 0, 1],
+      ease: easing as unknown as [number, number, number, number],
       staggerChildren: 0.1,
     },
   },
@@ -32,7 +34,7 @@ const itemVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.4, ease: [0.2, 0, 0, 1] },
+    transition: { duration: 0.4, ease: easing as unknown as [number, number, number, number] },
   },
 };
 
